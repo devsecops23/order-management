@@ -7,8 +7,8 @@ pr:
 - main
 
 pool:
-  #vmImage: ubuntu-latest
-  name:  MyPool
+  vmImage: ubuntu-latest
+
 
 steps:
 - task: NodeTool@0
