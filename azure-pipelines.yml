@@ -41,7 +41,7 @@ steps:
 
 - script: |
       trivy image devsecops/order-management:$(Build.BuildId)
-      displayName: "Image is Scanning"
+      displayName: "Image Scanning"
 
     
     
