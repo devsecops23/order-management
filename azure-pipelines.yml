@@ -1,3 +1,4 @@
+
 # Node.js
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
@@ -41,7 +42,7 @@ steps:
 
 - script: |
       trivy image devsecops/order-management:$(Build.BuildId)
-      displayName: "Image Scanning"
+      displayName: "Image is Scanning"
 
     
     
