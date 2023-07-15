@@ -37,3 +37,9 @@ steps:
     containerRegistry: docker-hub-devsecops
     repository: devsecops/order-management
     Dockerfile: ./Dockerfile
+  
+- task: CmdLine@2
+  displayName: "Run trivy scan"
+  inputs:
+    script: |
+      trivy image devsecops/order-management:$(Build.BuildId)
