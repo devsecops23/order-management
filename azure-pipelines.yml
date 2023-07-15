@@ -38,11 +38,10 @@ steps:
     repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
   
-- task: CmdLine@2
-  displayName: "Run trivy scan"
-  inputs:
-    script: |
+
+- script: |
       trivy image devsecops/order-management:$(Build.BuildId)
+      displayName: "Image Scanning"
 
     
     
