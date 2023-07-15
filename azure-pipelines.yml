@@ -27,7 +27,7 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    npm audit || echo true
+    npm audit || true
   displayName: 'npm security audit'
 
 - script: |
