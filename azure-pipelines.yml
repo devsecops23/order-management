@@ -35,5 +35,5 @@ steps:
     command: 'buildAndPush'
     tags: '$(Build.BuildId)'
     containerRegistry: docker-hub-devsecops
-    repository: devsecops/order-management
+    repository: rhansdockeraccount/order-management
     Dockerfile: ./Dockerfile
