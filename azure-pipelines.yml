@@ -30,6 +30,10 @@ steps:
     npm audit || true
   displayName: 'npm security audit'
 
-- script: |
-    docker build -t devsecops/order-management .
-  displayName: 'Build ordermaangement container image'
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    tags: '$(Build.BuildId)'
+    containerRegistry: docker-hub-devsecops
+    repository: devsecops/order-management
+    Dockerfile: ./Dockerfile
