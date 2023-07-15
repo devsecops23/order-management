@@ -35,7 +35,7 @@ steps:
     command: 'buildAndPush'
     tags: '$(Build.BuildId)'
     containerRegistry: docker-hub-devsecops
-    repository: devsecops/order-management
+    repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
   
 - task: CmdLine@2
@@ -43,3 +43,7 @@ steps:
   inputs:
     script: |
       trivy image devsecops/order-management:$(Build.BuildId)
+
+    
+    
+
