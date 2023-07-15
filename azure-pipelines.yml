@@ -31,5 +31,5 @@ steps:
   displayName: 'npm security audit'
 
 - script: |
-    docker build -t devsecops/order-management
+    docker build -t devsecops/order-management .
   displayName: 'Build ordermaangement container image'
