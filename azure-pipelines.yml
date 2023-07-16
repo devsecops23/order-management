@@ -16,6 +16,12 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+  
+- script: |
+    sudo apt-get install rpm
+    wget https://github.com/aquasecurity/trivy/releases/download/v$(trivyVersion)/trivy_$(trivyVersion)_Linux-64bit.deb
+    sudo dpkg -i trivy_$(trivyVersion)_Linux-64bit.deb
+    trivy -v
 
 - script: |
     echo "Running the sonar scanner"
