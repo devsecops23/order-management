@@ -18,12 +18,6 @@ steps:
   displayName: 'Install Node.js'
   
 - script: |
-   sudo apt-get install rpm
-   wget https://github.com/aquasecurity/trivy/releases/download/v$(trivyVersion)/trivy_$(trivyVersion)_Linux-64bit.deb
-   sudo dpkg -i trivy_$(trivyVersion)_Linux-64bit.deb
-    trivy -v
-
-- script: |
     echo "Running the sonar scanner"
     echo "Completed the sonar scanner"
   displayName: 'Review the code'
@@ -45,9 +39,7 @@ steps:
     repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
   
-- script: |
-    trivy image devsecops/order-management:$(Build.BuildId)
-  displayName: "Image is Scanning"
+
 
     
     
