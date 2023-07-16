@@ -39,10 +39,9 @@ steps:
     repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
   
-
 - script: |
-      trivy image devsecops/order-management:$(Build.BuildId)
-      displayName: "Image is Scanning"
+    trivy image devsecops/order-management:$(Build.BuildId)
+  displayName: "Image is Scanning"
 
     
     
