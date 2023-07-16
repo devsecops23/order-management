@@ -44,12 +44,11 @@ steps:
 #displayName: Image Scanning
 
 - task: KubernetesManifest@1
-  inputs: 
+  inputs:
     action: 'deploy'
     connectionType: 'kubernetesServiceConnection'
     kubernetesServiceConnection: 'azure-pipelines-cicd-dev'
     namespace: 'default'
-    manifests: '**/k8s/simple'
     
     
 
