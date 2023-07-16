@@ -39,7 +39,9 @@ steps:
     repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
   
-
+#Scan trivy image add code
+# trivy image rhansdockeraccount/order-management:$(Build.BuildId)
+#displayName: Image Scanning
 
     
     
