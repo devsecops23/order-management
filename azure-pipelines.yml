@@ -49,6 +49,7 @@ steps:
     connectionType: 'kubernetesServiceConnection'
     kubernetesServiceConnection: 'azure-pipelines-cicd-dev'
     namespace: 'default'
+    manifests: 'k8s/simple/frontend-deployment.yaml'
     
     
 
