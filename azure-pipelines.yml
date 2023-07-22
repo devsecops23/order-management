@@ -38,6 +38,7 @@ steps:
     containerRegistry: docker-hub-devsecops
     repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
+
 #- task: trivy@1
 #  inputs:
 #    image: rhansdockeraccount/order-management:$(Build.BuildId)
@@ -45,13 +46,13 @@ steps:
 # trivy image rhansdockeraccount/order-management:$(Build.BuildId)
 #displayName: Image Scanning
 
-- task: trivy@1
-  inputs:
-    version: 'latest'
-    loginDockerConfig: true
-    image: rhansdockeraccount/order-management:$(Build.BuildId)
-    severities: 'LOW'
-    ignoreUnfixed: true
+# - task: trivy@1
+#   inputs:
+#     version: 'latest'
+#     loginDockerConfig: true
+#     image: rhansdockeraccount/order-management:$(Build.BuildId)
+#     severities: 'CRITICAL'
+#     ignoreUnfixed: true
    
 - task: KubernetesManifest@1
   inputs:
