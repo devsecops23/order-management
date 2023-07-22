@@ -38,11 +38,18 @@ steps:
     containerRegistry: docker-hub-devsecops
     repository: rhansdockeraccount/order-management 
     Dockerfile: ./Dockerfile
-  
+
 #Scan trivy image add code
 # trivy image rhansdockeraccount/order-management:$(Build.BuildId)
 #displayName: Image Scanning
 
+
+- task: CmdLine@2
+  displayName: Scan trivy image
+  inputs:
+    script: |
+      trivy image --exit-code 0 --severity LOW,MEDIUM rhansdockeraccount/order-management:$(Build.BuildId)
+   
 - task: KubernetesManifest@1
   inputs:
     action: 'deploy'
@@ -50,6 +57,5 @@ steps:
     kubernetesServiceConnection: 'azure-pipelines-cicd-dev'
     namespace: 'default'
     manifests: 'k8s/simple/frontend-deployment.yaml'
-    
     
 
